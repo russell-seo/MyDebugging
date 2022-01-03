@@ -12,7 +12,7 @@
      
      
      
-  - 필자는 약 5일간의 삽질을 통해 계속 null 값만 넣어왔고 연관관계 메소드를 포함한 여러 방법을 적용시켜 보았다.
+  - 필자는 약 5일간의 삽질을 통해 계속 null 값만 넣어왔고 연관관계 메소드를 포함한 여러 방법을 적용시켜 보았다. 삽질 끝에 아래 방법으로 `N:1`, `1:N` 양방향 모두 값을 셋팅 하게 되었다.
 
 
   
@@ -21,7 +21,19 @@
  
  DTO -> Entity
  
- 필자는 Controller 에서 DTO로 받아 User 객체 생성하면서 파라미터로 DTO -> Entity로 변환, 제일 중요한 것은 userInterest_list -> 
+ 필자는 Controller 에서 DTO로 받아 User 객체 생성하면서 파라미터로 DTO를 받아 -> Entity로 변환하는 것이 가장 난관이었다. 제일 중요한 것은 userInterest_list 가 양방향 매핑이었고 아래 코드를 보면 User 도메인에 DTO 를 User Entity로 변환할 때 
+ ~~~java
+ this.userInterest_list = userDto.getUser_interest_list().stream()
+                .map(o -> {
+                    UserInterest userInterest = new UserInterest(o);
+                    userInterest.setUser(this); // FK 값 있는 다(N) 방향도 값 셋팅
+                    return userInterest;
+                })
+                .collect(Collectors.toList());
+ ~~~                
+ 
+위 코드를 통해 UserInterest에 값을 셋팅, 연관관계 메소드를 적용 해 보았지만 모두 실패... 이게 문제없는 코드인지는 모르겠지만 삽질 끝에 FK값을 양방향에 셋팅 할 수 있게 되었다.
+ 
  
  Controller
  ~~~java
@@ -36,6 +48,7 @@
  
  User(도메인)
  ~~~java
+ 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserInterest> userInterest_list = new ArrayList<>();
  
@@ -51,11 +64,21 @@
         this.userInterest_list = userDto.getUser_interest_list().stream()
                 .map(o -> {
                     UserInterest userInterest = new UserInterest(o);
-                    userInterest.setUser(this);
+                    userInterest.setUser(this); // FK 값 있는 다(N) 방향도 값 셋팅
                     return userInterest;
                 })
                 .collect(Collectors.toList());
     }
+ ~~~
+ 
+ 
+ UserInterest(도메인)
+ ~~~java
+ 
+ @ManyToOne(fetch = FetchType.Lazy, cascade = CascadeType.ALL)
+ @Joincolumn(name = "user_id")
+ private User user;
+ 
  ~~~
 
   
