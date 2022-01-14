@@ -14,5 +14,9 @@
   1) 상단 메뉴바 에서 파일 > Project Structure > Artifacts > + > Web Application : Archive 로 진행
   2) Web Application : Archive 를 선택하면 Empty 와 For 'Gradle ... 이 나온다.
   3) For 'Gradle ... war(exploded) 를 선택한다.
-  4) 
+  4) 다른건 건드리지말고 OK를 누른다.
+  5) 상단 메뉴바 `Build` -> Build Artifact 에서 방금 선택했던 war 파일 이름을 찾아서 Build를 한다.
+  6) 최종적으로 war 파일이 생성 된 것을 볼 수 있다.
+  
+  
   
