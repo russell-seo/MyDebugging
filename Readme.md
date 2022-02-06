@@ -5,3 +5,8 @@
 - [Spring boot war 추출](https://github.com/russell-seo/MyDebugging/blob/main/SpringBootWar.md)
 - [Spring boot jar 배포](https://github.com/russell-seo/MyDebugging/blob/main/SpringBootJar.md)
 - [Spring Redis 적용](https://github.com/russell-seo/MyDebugging/blob/main/SpringRedis.md)
+
+
+# Mac M1
+
+- [Mac 터미널에서 AWS EC2 접속]()
