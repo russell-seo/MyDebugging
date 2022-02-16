@@ -6,6 +6,7 @@
   ## Jar 파일 추출
   
   - Gradle 탭에서 - Task > Build > bootJar를 선택하여 실행한다.
+  
   ![image](https://user-images.githubusercontent.com/79154652/150359457-f1bfe528-87b5-4bc0-a132-b7dab4e1ae0a.png)
   
   - Jar 파일이 생성된 위치를 확인한다.
