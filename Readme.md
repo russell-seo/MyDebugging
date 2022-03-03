@@ -12,3 +12,7 @@
 # Mac M1
 
 - [Mac 터미널에서 AWS EC2 접속](https://github.com/russell-seo/MyDebugging/blob/main/MacTerminal.md)
+
+# ELK Stack
+
+- [ELK Stack 요청 IP 분리하여 KIBANA Index 생성]()
