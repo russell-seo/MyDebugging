@@ -15,4 +15,4 @@
 
 # ELK Stack
 
-- [ELK Stack 요청 IP 분리하여 KIBANA Index 생성]()
+- [ELK Stack 요청 IP 분리하여 KIBANA Index 생성](https://github.com/russell-seo/MyDebugging/blob/main/elkstack.md)
