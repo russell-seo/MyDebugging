@@ -7,7 +7,6 @@
 - [Spring boot war 추출](https://github.com/russell-seo/MyDebugging/blob/main/SpringBootWar.md)
 - [Spring boot jar 배포](https://github.com/russell-seo/MyDebugging/blob/main/SpringBootJar.md)
 - [Spring Redis 적용](https://github.com/russell-seo/MyDebugging/blob/main/SpringRedis.md)
-- [Spring Jwt Refresh Token Redis 적용]()
 - [MyBatis Join](https://github.com/russell-seo/TIL/blob/main/MyBatis.md)
 
 # Mac M1
