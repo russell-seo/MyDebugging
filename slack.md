@@ -37,7 +37,7 @@
     channel = "#로젠서버-error"
     username = "LOGEN-WAS"
     colorCoding = "true"
-    webhookUri = "https://hooks.slack.com/services/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"
+    webhookUri = "webhookUri 입력"
     layout(PatternLayout) {
         pattern = "%d{yyyy-MM-dd HH:mm:ss.SSS} %msg %n"
     }
