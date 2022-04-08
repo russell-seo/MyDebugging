@@ -92,4 +92,5 @@ logger("com.jhc.logen.log", ERROR, ["ASYNC_SLACK"], false)
 참고
 ----
 [https://kangwoojin.github.io/programing/logback-async-appender/](https://kangwoojin.github.io/programing/logback-async-appender/)
+
 [https://ckddn9496.tistory.com/81?category=428336](https://ckddn9496.tistory.com/81?category=428336)
